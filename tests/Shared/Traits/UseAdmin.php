@@ -8,7 +8,9 @@ trait UseAdmin
 {
     public function getHeaders(): array
     {
-        $admin = User::where('is_admin', true)->first();
+        $admin = User::factory()->create([
+            'is_admin' => true
+        ]);
 
         return [
             'Authorization' => 'Bearer ' . $admin->token,

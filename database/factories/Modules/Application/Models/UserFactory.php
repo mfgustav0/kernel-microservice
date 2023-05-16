@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories;
+namespace Database\Factories\Modules\Application\Models;
 
 use Illuminate\Support\Facades\Crypt;
 use App\Modules\Application\Models\User;
@@ -22,10 +22,10 @@ class UserFactory extends Factory
      */
     public function definition()
     {
-        $name = faker()->name;
+        $name = $this->faker->name;
 
         return [
-            'id' => faker()->uuid(),
+            'id' => $this->faker->uuid(),
             'name' => $name,
             'is_admin' => $this->faker->boolean(),
             'token' => Crypt::encrypt($name),
