@@ -1,6 +1,6 @@
 <?php
 
-namespace Database\Factories\Modules\Application\Models;
+namespace Database\Factories\Application;
 
 use Illuminate\Support\Facades\Crypt;
 use App\Modules\Application\Models\User;

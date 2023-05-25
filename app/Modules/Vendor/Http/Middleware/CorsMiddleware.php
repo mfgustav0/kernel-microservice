@@ -3,6 +3,7 @@
 namespace App\Modules\Vendor\Http\Middleware;
 
 use Closure;
+use Illuminate\Http\Request;
 
 class CorsMiddleware
 {
@@ -13,7 +14,7 @@ class CorsMiddleware
      * @param  \Closure  $next
      * @return mixed
      */
-    public function handle($request, Closure $next)
+    public function handle(Request $request, Closure $next): mixed
     {
         $headers = [
             'Access-Control-Allow-Origin'      => '*',

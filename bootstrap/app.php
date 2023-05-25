@@ -93,7 +93,6 @@ $app->routeMiddleware([
 
 // $app->register(App\Providers\AppServiceProvider::class);
 $app->register(App\Modules\Vendor\Providers\AuthServiceProvider::class);
-$app->register(App\Modules\Vendor\Providers\CommandServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 
 /*

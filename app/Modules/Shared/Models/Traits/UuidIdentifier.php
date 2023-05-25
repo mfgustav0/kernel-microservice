@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Shared\Traits;
+namespace App\Modules\Shared\Models\Traits;
 
 trait UuidIdentifier
 {

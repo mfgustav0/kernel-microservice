@@ -2,10 +2,10 @@
 
 namespace App\Modules\Shared\Models;
 
-use App\Modules\Shared\Traits\UuidIdentifier;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use App\Modules\Shared\Models\Traits\UuidIdentifier;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class BaseModel extends Model
 {
