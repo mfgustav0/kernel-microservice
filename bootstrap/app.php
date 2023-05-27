@@ -60,6 +60,7 @@ $app->singleton(
 
 $app->configure('app');
 $app->configure('logging');
+$app->configure('ratelimit');
 
 /*
 |--------------------------------------------------------------------------
@@ -78,6 +79,7 @@ $app->middleware([
 
 $app->routeMiddleware([
     'auth' => App\Modules\Vendor\Http\Middleware\Authenticate::class,
+    'throttle' => App\Modules\Vendor\Http\Middleware\ThrottleRequests::class,
 ]);
 
 /*
@@ -93,6 +95,7 @@ $app->routeMiddleware([
 
 // $app->register(App\Providers\AppServiceProvider::class);
 $app->register(App\Modules\Vendor\Providers\AuthServiceProvider::class);
+$app->register(App\Modules\Vendor\Providers\RouteServiceProvider::class);
 // $app->register(App\Providers\EventServiceProvider::class);
 
 /*
@@ -105,11 +108,5 @@ $app->register(App\Modules\Vendor\Providers\AuthServiceProvider::class);
 | can respond to, as well as the controllers that may handle them.
 |
 */
-
-$app->router->group([
-    'namespace' => 'App\Modules\Vendor\Http\Controllers',
-], function ($router) {
-    require __DIR__.'/../routes/api.php';
-});
 
 return $app;
