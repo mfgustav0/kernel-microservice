@@ -32,10 +32,30 @@ class HomeTest extends TestCase
 
         //Assert
         $this
+            ->seeHeader('X-Ratelimit-Limit', config('ratelimit.api'))
+            ->seeHeader('X-Ratelimit-Remaining', config('ratelimit.api') - 1)
             ->seeJsonEquals([
                 'version' => $this->app->version(),
                 'today' => Carbon::today()->format('Y-m-d')
             ])
             ->assertEquals(200, $this->response->status());
+    }
+    
+    public function test_user_rate_limit(): void
+    {
+        if(!env('TEST_RATE_LIMIT')) {
+            $this->assertEquals(true, true);
+            return;
+        }
+
+        foreach(range(1, config('ratelimit.api')) as $i) {
+            $this->get('/', $this->getHeaders())
+                ->seeHeader('x-ratelimit-remaining', config('ratelimit.api') - $i)
+                ->assertEquals(200, $this->response->status());
+        }
+
+        $this->get('/', $this->getHeaders())
+            ->seeHeader('retry-after', 60)
+            ->assertEquals(429, $this->response->status());
     }
 }
