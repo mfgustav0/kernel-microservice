@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Modules\Vendor\Console;
+namespace App\Vendor\Console;
 
 use Illuminate\Console\Scheduling\Schedule;
 use Laravel\Lumen\Console\Kernel as ConsoleKernel;
-use App\Modules\Vendor\Console\Commands\KeyGenerateCommand;
+use App\Vendor\Console\Commands\KeyGenerateCommand;
 
 class Kernel extends ConsoleKernel
 {

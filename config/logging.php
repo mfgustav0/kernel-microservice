@@ -3,8 +3,8 @@
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
-use App\Modules\Vendor\Logging\MySQL\MySqlLogger;
-use App\Modules\Vendor\Logging\MySQL\MySQLLoggingHandler;
+use App\Vendor\Logging\MySQL\MySqlLogger;
+use App\Vendor\Logging\MySQL\MySQLLoggingHandler;
 
 return [
 

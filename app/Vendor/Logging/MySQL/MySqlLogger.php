@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Modules\Vendor\Logging\MySQL;
+namespace App\Vendor\Logging\MySQL;
  
 use Monolog\Logger;
-use App\Modules\Vendor\Logging\MySQL\MySQLLoggingHandler;
+use App\Vendor\Logging\MySQL\MySQLLoggingHandler;
  
 class MySqlLogger
 {
@@ -17,6 +17,6 @@ class MySqlLogger
     {
         $logger = new Logger('MySQLLoggingHandler');
 
-        return $logger->pushHandler(new MySQLLoggingHandler());
+        return $logger->pushHandler(new MySQLLoggingHandler);
     }
 }

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Vendor\Providers;
+namespace App\Vendor\Providers;
 
 use Illuminate\Cache\RateLimiting\Limit;
 use Illuminate\Support\ServiceProvider;
@@ -14,7 +14,7 @@ class RouteServiceProvider extends ServiceProvider
         $this->configureRateLimiting();
 
         $this->app->router->group([
-            'namespace' => 'App\Modules\Vendor\Http\Controllers',
+            'namespace' => 'App\Modules',
         ], function ($router) {
             require base_path('/routes/api.php');
         });

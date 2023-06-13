@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Vendor\Exceptions;
+namespace App\Vendor\Exceptions;
 
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;

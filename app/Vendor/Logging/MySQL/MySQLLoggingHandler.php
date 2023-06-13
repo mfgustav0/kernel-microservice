@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Modules\Vendor\Logging\MySQL;
+namespace App\Vendor\Logging\MySQL;
 
 use Monolog\LogRecord;
 use Illuminate\Support\Facades\DB;
