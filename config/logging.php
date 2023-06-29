@@ -3,8 +3,6 @@
 use Monolog\Handler\NullHandler;
 use Monolog\Handler\StreamHandler;
 use Monolog\Handler\SyslogUdpHandler;
-use App\Modules\Vendor\Logging\MySQL\MySqlLogger;
-use App\Modules\Vendor\Logging\MySQL\MySQLLoggingHandler;
 
 return [
 
@@ -112,8 +110,8 @@ return [
 
         'database' => [
             'driver' => 'custom',
-            'handler' => MySQLLoggingHandler::class,
-            'via' => MySqlLogger::class,
+            'handler' => \App\Vendor\Logging\MySQL\MySQLLoggingHandler::class,
+            'via' => \App\Vendor\Logging\MySQL\MySqlLogger::class,
             'level' => 'debug',
         ],
     ],

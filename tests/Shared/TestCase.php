@@ -11,12 +11,6 @@ abstract class TestCase extends BaseTestCase
     use DatabaseMigrations;
     use UseAdmin;
 
-    public function setUp(): void
-    {
-        parent::setUp();
-        $this->artisan('db:seed');
-    }
-
     /**
      * Creates the application.
      *

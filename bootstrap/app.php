@@ -39,12 +39,12 @@ $app->withEloquent();
 
 $app->singleton(
     Illuminate\Contracts\Debug\ExceptionHandler::class,
-    App\Modules\Vendor\Exceptions\Handler::class
+    App\Vendor\Exceptions\Handler::class
 );
 
 $app->singleton(
     Illuminate\Contracts\Console\Kernel::class,
-    App\Modules\Vendor\Console\Kernel::class
+    App\Vendor\Console\Kernel::class
 );
 
 /*
@@ -74,12 +74,12 @@ $app->configure('ratelimit');
 */
 
 $app->middleware([
-    App\Modules\Vendor\Http\Middleware\CorsMiddleware::class
+    App\Vendor\Http\Middleware\CorsMiddleware::class
 ]);
 
 $app->routeMiddleware([
-    'auth' => App\Modules\Vendor\Http\Middleware\Authenticate::class,
-    'throttle' => App\Modules\Vendor\Http\Middleware\ThrottleRequests::class,
+    'auth' => App\Vendor\Http\Middleware\Authenticate::class,
+    'throttle' => App\Vendor\Http\Middleware\ThrottleRequests::class,
 ]);
 
 /*
@@ -93,10 +93,11 @@ $app->routeMiddleware([
 |
 */
 
-// $app->register(App\Providers\AppServiceProvider::class);
-$app->register(App\Modules\Vendor\Providers\AuthServiceProvider::class);
-$app->register(App\Modules\Vendor\Providers\RouteServiceProvider::class);
-// $app->register(App\Providers\EventServiceProvider::class);
+// $app->register(App\Vendor\Providers\AppServiceProvider::class);
+$app->register(App\Vendor\Providers\AuthServiceProvider::class);
+$app->register(App\Vendor\Providers\RouteServiceProvider::class);
+$app->register(App\Vendor\Providers\FormRequestServiceProvider::class);
+// $app->register(App\Vendor\Providers\EventServiceProvider::class);
 
 /*
 |--------------------------------------------------------------------------
