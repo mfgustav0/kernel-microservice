@@ -5,12 +5,16 @@ namespace Tests\Shared\Traits;
 use App\Modules\Application\Models\User;
 
 trait UseAdmin
-{
-    public function getHeaders(): array
+{    
+    public function setUp(): void
     {
-        $admin = User::factory()->create([
-            'is_admin' => true
-        ]);
+        parent::setUp();
+        $this->artisan('db:seed');
+    }
+
+    public function getHeaders(bool $is_admin=false): array
+    {
+        $admin = User::factory()->create(compact('is_admin'));
 
         return [
             'Authorization' => 'Bearer ' . $admin->token,

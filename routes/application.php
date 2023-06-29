@@ -16,5 +16,5 @@ use Laravel\Lumen\Routing\Router;
 */
 
 $router->group(['middleware' => ['auth', 'throttle:api']], function (Router $router) {
-    $router->get('/', 'Application\Http\Controllers\HomeController@index');
+    $router->get('/', 'HomeController@index');
 });

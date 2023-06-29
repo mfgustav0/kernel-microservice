@@ -19,6 +19,10 @@ class User extends BaseModel implements Authenticatable
         'token',
     ];
 
+    protected $casts = [
+        'is_admin' => 'boolean'
+    ];
+
     protected static function newFactory(): Factory
     {
         return UserFactory::new();

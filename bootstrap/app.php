@@ -96,6 +96,7 @@ $app->routeMiddleware([
 // $app->register(App\Vendor\Providers\AppServiceProvider::class);
 $app->register(App\Vendor\Providers\AuthServiceProvider::class);
 $app->register(App\Vendor\Providers\RouteServiceProvider::class);
+$app->register(App\Vendor\Providers\FormRequestServiceProvider::class);
 // $app->register(App\Vendor\Providers\EventServiceProvider::class);
 
 /*

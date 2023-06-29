@@ -12,11 +12,26 @@ class RouteServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->configureRateLimiting();
+        $this->configureRoutes();
+    }
+
+    /**
+     * Configure the routes for the application.
+     *
+     * @return void
+     */
+    protected function configureRoutes(): void
+    {
+        $this->app->router->group([
+            'namespace' => 'App\Vendor\Http\Controllers',
+        ], function ($router) {
+            require base_path('/routes/kernel.php');
+        });
 
         $this->app->router->group([
-            'namespace' => 'App\Modules',
+            'namespace' => 'App\Modules\Application\Http\Controllers',
         ], function ($router) {
-            require base_path('/routes/api.php');
+            require base_path('/routes/application.php');
         });
     }
 

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use App\Modules\Shared\Models\Traits\UuidIdentifier;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class BaseModel extends Model
+abstract class BaseModel extends Model
 {
     use HasFactory, UuidIdentifier, SoftDeletes;
 }

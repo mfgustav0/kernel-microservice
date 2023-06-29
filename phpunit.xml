@@ -16,5 +16,6 @@
         <env name="DB_CONNECTION" value="sqlite"/>
         <env name="DB_DATABASE" value=":memory:"/>
         <env name="TEST_RATE_LIMIT" value="false"/>
+        <env name="LOG_CHANNEL" value="database"/>
     </php>
 </phpunit>

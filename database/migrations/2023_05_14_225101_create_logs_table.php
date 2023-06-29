@@ -14,12 +14,12 @@ return new class extends Migration
         Schema::create('logs', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->longText('message');
-            $table->longText('context');
+            $table->json('context');
             $table->string('level')->index();
             $table->string('level_name');
             $table->string('channel')->index();
             $table->string('record_datetime');
-            $table->longText('extra');
+            $table->json('extra');
             $table->longText('formatted');
 
             $table->string('remote_addr')->nullable();
