@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Vendor\Http\Controllers;
+namespace App\Modules\Kernel\Http\Controllers;
 
 use Illuminate\Http\JsonResponse;
-use App\Vendor\Services\Logs\LogIndexService;
-use App\Vendor\Http\Requests\Log\LogIndexRequest;
+use App\Modules\Kernel\Services\Logs\LogIndexService;
 use App\Modules\Shared\Http\Controllers\BaseController;
+use App\Modules\Kernel\Http\Requests\Log\LogIndexRequest;
 
 class LogController extends BaseController
 {

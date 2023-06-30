@@ -3,8 +3,7 @@
 namespace App\Vendor\Logging\MySQL;
 
 use Monolog\LogRecord;
-use App\Vendor\Models\LogModel;
-use Illuminate\Support\Facades\DB;
+use App\Modules\Kernel\Models\Log as LogModel;
 use Monolog\Handler\AbstractProcessingHandler;
 
 class MySQLLoggingHandler extends AbstractProcessingHandler

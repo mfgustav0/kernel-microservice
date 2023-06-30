@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Vendor\Services\Logs;
+namespace App\Modules\Kernel\Services\Logs;
 
-use App\Vendor\Models\LogModel;
-use App\Vendor\Http\Resources\Log\LogCollection;
-use App\Vendor\Http\Requests\Log\LogIndexRequest;
+use App\Modules\Kernel\Models\Log AS LogModel;
+use App\Modules\Kernel\Http\Resources\Log\LogCollection;
+use App\Modules\Kernel\Http\Requests\Log\LogIndexRequest;
 
 class LogIndexService
 {
