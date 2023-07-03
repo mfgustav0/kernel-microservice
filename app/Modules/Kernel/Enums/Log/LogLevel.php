@@ -2,8 +2,12 @@
 
 namespace App\Modules\Kernel\Enums\Log;
 
+use App\Modules\Shared\Enums\BaseEnum;
+
 enum LogLevel: string
 {
+    use BaseEnum;
+
     case Debug = 'debug';
     case Info = 'info';
     case Notice = 'notice';

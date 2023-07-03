@@ -9,7 +9,7 @@ use Laravel\Lumen\Testing\TestCase as BaseTestCase;
 abstract class TestCase extends BaseTestCase
 {
     use DatabaseMigrations;
-    // use UseAdmin;
+    use UseAdmin;
 
     /**
      * Creates the application.

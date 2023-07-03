@@ -19,7 +19,7 @@ class LogIndexRequest extends BaseRequest
             'per_page' => ['nullable', 'integer'],
             'initial_date' => ['nullable', 'date'],
             'final_date' => ['nullable', 'date'],
-            'level' => ['nullable', Rule::in(LogLevel::cases())],
+            'level' => ['nullable', Rule::in(LogLevel::values())],
         ];
     }
 }
