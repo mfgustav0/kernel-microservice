@@ -23,7 +23,7 @@ class RouteServiceProvider extends ServiceProvider
     protected function configureRoutes(): void
     {
         $this->app->router->group([
-            'namespace' => 'App\Vendor\Http\Controllers',
+            'namespace' => 'App\Modules\Kernel\Http\Controllers',
         ], function ($router) {
             require base_path('/routes/kernel.php');
         });

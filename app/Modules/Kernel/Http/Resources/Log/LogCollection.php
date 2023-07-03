@@ -1,9 +1,9 @@
 <?php
  
-namespace App\Vendor\Http\Resources\Log;
+namespace App\Modules\Kernel\Http\Resources\Log;
  
 use Illuminate\Http\Request;
-use App\Vendor\Models\LogModel;
+use App\Modules\Kernel\Models\Log as LogModel;
 use Illuminate\Http\Resources\Json\ResourceCollection;
  
 class LogCollection extends ResourceCollection

@@ -1,14 +1,12 @@
 <?php
 
-namespace App\Vendor\Models;
+namespace App\Modules\Kernel\Models;
 
-use App\Shared\Casts\Json;
+use App\Modules\Shared\Casts\Json;
 use Illuminate\Database\Eloquent\Model;
 
-class LogModel extends Model
+class Log extends Model
 {
-    protected $table = 'logs';
-
     public $timestamps = false;
 
     protected $fillable = [
@@ -28,7 +26,7 @@ class LogModel extends Model
     protected $casts = [
         'record_datetime' => 'datetime',
         'created_at' => 'datetime',
-        'context' => 'object',
-        'extra' => 'object',
+        'context' => Json::class,
+        'extra' => Json::class,
     ];
 }

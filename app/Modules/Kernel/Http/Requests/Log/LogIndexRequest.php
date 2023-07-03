@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Vendor\Http\Requests\Log;
+namespace App\Modules\Kernel\Http\Requests\Log;
 
 use Illuminate\Validation\Rule;
+use App\Modules\Kernel\Enums\Log\LogLevel;
 use App\Modules\Shared\Http\Requests\BaseRequest;
 
 class LogIndexRequest extends BaseRequest
@@ -18,19 +19,7 @@ class LogIndexRequest extends BaseRequest
             'per_page' => ['nullable', 'integer'],
             'initial_date' => ['nullable', 'date'],
             'final_date' => ['nullable', 'date'],
-            'level' => [
-                'nullable',
-                Rule::in([
-                    'debug',
-                    'info',
-                    'notice',
-                    'warning',
-                    'error',
-                    'critical',
-                    'alert',
-                    'emergency',
-                ])
-            ],
+            'level' => ['nullable', Rule::in(LogLevel::values())],
         ];
     }
 }
