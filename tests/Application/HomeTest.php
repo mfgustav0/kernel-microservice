@@ -27,13 +27,12 @@ class HomeTest extends TestCase
         //Prepare
 
         //Act
-        $this->get('/', $this->getHeaders());
-
+        $this->get('/', $this->getHeadersCustomer());
 
         //Assert
         $this
-            ->seeHeader('X-Ratelimit-Limit', config('ratelimit.api'))
-            ->seeHeader('X-Ratelimit-Remaining', config('ratelimit.api') - 1)
+            ->seeHeader('X-RateLimit-Limit', config('ratelimit.api'))
+            ->seeHeader('x-ratelimit-remaining', config('ratelimit.api') - 1)
             ->seeJsonEquals([
                 'version' => $this->app->version(),
                 'today' => Carbon::today()->format('Y-m-d')
@@ -49,12 +48,12 @@ class HomeTest extends TestCase
         }
 
         foreach(range(1, config('ratelimit.api')) as $i) {
-            $this->get('/', $this->getHeaders())
+            $this->get('/', $this->getHeadersCustomer())
                 ->seeHeader('x-ratelimit-remaining', config('ratelimit.api') - $i)
                 ->assertEquals(200, $this->response->status());
         }
 
-        $this->get('/', $this->getHeaders())
+        $this->get('/', $this->getHeadersCustomer())
             ->seeHeader('retry-after', 60)
             ->assertEquals(429, $this->response->status());
     }

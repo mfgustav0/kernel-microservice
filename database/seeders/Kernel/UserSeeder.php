@@ -1,11 +1,11 @@
 <?php
 
-namespace Database\Seeders\Application;
+namespace Database\Seeders\Kernel;
 
 use Ramsey\Uuid\Uuid;
 use Illuminate\Database\Seeder;
+use App\Modules\Kernel\Models\User;
 use Illuminate\Support\Facades\Crypt;
-use App\Modules\Application\Models\User;
 
 class UserSeeder extends Seeder
 {

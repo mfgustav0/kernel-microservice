@@ -1,9 +1,9 @@
 <?php
 
-namespace Database\Factories\Application;
+namespace Database\Factories\Kernel;
 
+use App\Modules\Kernel\Models\User;
 use Illuminate\Support\Facades\Crypt;
-use App\Modules\Application\Models\User;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 class UserFactory extends Factory
@@ -20,7 +20,7 @@ class UserFactory extends Factory
      *
      * @return array
      */
-    public function definition()
+    public function definition(): array
     {
         $name = $this->faker->name;
 

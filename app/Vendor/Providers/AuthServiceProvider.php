@@ -2,8 +2,9 @@
 
 namespace App\Vendor\Providers;
 
+use App\Modules\Kernel\Models\User;
+use App\Modules\Kernel\Models\Customer;
 use Illuminate\Support\ServiceProvider;
-use App\Modules\Application\Models\User;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -36,10 +37,22 @@ class AuthServiceProvider extends ServiceProvider
                 $token = (string)$bearer;
             }
 
-            $found = User::where('token', $token)->first();
-            if ($found) {
-                return $found;
+            return User::where('token', $token)->first();
+        });
+
+        $this->app['auth']->viaRequest('token', function ($request) {
+            $token = '';
+            if ($request->hasHeader('Authorization')) {
+                $bearer = str($request->header('Authorization'));
+
+                if($bearer->startsWith('Bearer ')) {
+                    $bearer = $bearer->substr(7);
+                }
+
+                $token = (string)$bearer;
             }
+
+            return Customer::where('secret', $token)->first();
         });
     }
 }

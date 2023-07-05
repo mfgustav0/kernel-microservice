@@ -3,8 +3,8 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
+use Database\Seeders\Kernel\UserSeeder;
 use Database\Seeders\Kernel\CustomerSeeder;
-use Database\Seeders\Application\UserSeeder;
 
 class DatabaseSeeder extends Seeder
 {
