@@ -15,6 +15,13 @@ use Laravel\Lumen\Routing\Router;
 |
 */
 
+$router->get('upload-image/{id}', [
+    'as' => 'application.upload-image.show',
+    'uses' => 'UploadImageController@show'
+]);
+
 $router->group(['middleware' => ['auth:customer', 'throttle:api']], function (Router $router) {
     $router->get('/', 'HomeController@index');
+
+    $router->post('upload-image/', 'UploadImageController@store');
 });

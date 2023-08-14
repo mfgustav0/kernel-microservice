@@ -61,6 +61,7 @@ $app->singleton(
 $app->configure('app');
 $app->configure('logging');
 $app->configure('ratelimit');
+$app->configure('upload-file');
 
 /*
 |--------------------------------------------------------------------------

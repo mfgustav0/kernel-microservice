@@ -6,6 +6,7 @@ use Illuminate\Console\Scheduling\Schedule;
 use Laravel\Lumen\Console\Kernel as ConsoleKernel;
 use App\Vendor\Console\Commands\KeyGenerateCommand;
 use App\Modules\Kernel\Commands\CreateCustomerCommand;
+use App\Modules\Application\Commands\ClearUploadImageCommand;
 
 class Kernel extends ConsoleKernel
 {
@@ -16,6 +17,7 @@ class Kernel extends ConsoleKernel
      */
     protected $commands = [
         KeyGenerateCommand::class,
+        ClearUploadImageCommand::class,
         CreateCustomerCommand::class
     ];
 
